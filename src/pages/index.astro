@@ -1,16 +1,35 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import PromoBanner from '../components/PromoBanner.astro'
+import Hero from '../components/Hero.astro'
+import WhyUCM from '../components/WhyUCM.astro'
+import Services from '../components/Services.astro'
+import PlnaesUCM from '../components/PlanesUCM.astro'
+import BeneficiosUCM from '../components/BeneficiosUCM.astro'
+import CoberturaUCM from '../components/CoberturaUCM.astro'
+import ContrataUCM from '../components/ContrataUCM.astro'
+import Footer from '../components/Footer.astro'
+import { SITE } from '../data/site'
+const meta = {
+  title: `${SITE.name} | ${SITE.brand}`,
+  description:
+    'Afíliate hoy a UCM con atención médica a domicilio 24/7. Cotiza por WhatsApp o llamada.',
+  image: SITE.ogImage
+}
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout {...meta}>
+  <Header />
+  <main>
+    <Hero />
+    <PromoBanner />
+    <WhyUCM />
+    <Services />
+    <PlnaesUCM />
+    <BeneficiosUCM />
+    <CoberturaUCM />
+    <ContrataUCM />
+    <Footer />
+  </main>
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import { LINKS, SITE } from '../data/site'
+---
+
+<section
+  id="inicio"
+  class="relative w-full h-[90vh] flex items-center justify-center md:justify-start text-white"
+  style="background-image: url('/images/ucm-bg.png'); background-size: cover; background-position: center;"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/70 via-[#1a1a1a]/40 to-[#1a1a1a]/70">
+  </div>
+
+  <!-- Contenido -->
+  <div
+    class="relative z-10 container-md flex flex-col items-center md:items-start text-center md:text-left max-w-3xl"
+  >
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white drop-shadow-md">
+      Atención médica <br class="hidden md:block" /> donde y cuando la necesites
+    </h1>
+
+    <p class="mt-4 text-lg md:text-xl text-gray-100 max-w-xl">
+      Afíliate con tu <strong>ejecutiva especializada</strong> y obtén atención médica a domicilio las
+      24 horas del día con <strong>{SITE.brand}</strong>.
+    </p>
+
+    <div class="mt-8">
+      <a href={LINKS.wa()} class="btn-secondary text-lg"> Cotizar Ahora </a>
+    </div>
+  </div>
+</section>

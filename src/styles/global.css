@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+/* utilidades pequeñas */
+.container-md {
+  @apply max-w-6xl mx-auto px-4;
+}
+.section {
+  @apply py-12 md:py-16;
+}
+.title {
+  @apply text-2xl md:text-3xl font-semibold text-[#2A3E63];
+}
+.subtitle {
+  @apply text-base md:text-lg text-gray-600;
+}
+
+/* BOTONES UCM */
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-lg px-5 py-3 font-semibold shadow
+         bg-[#2A3E63] text-white hover:bg-[#1e2e4a] transition;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-lg px-5 py-3 font-semibold shadow
+         bg-[#D62828] text-white hover:bg-[#b81f1f] transition;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-lg px-5 py-3 font-medium
+         border border-gray-300 hover:bg-gray-50;
+}

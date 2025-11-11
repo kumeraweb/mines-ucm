@@ -1,0 +1,24 @@
+---
+import '../styles/global.css'
+const {
+  title = 'UCM – Atención médica en tu hogar',
+  description = 'Contrata tu plan UCM con María Inés. Atención 24/7 en Santiago y V Región.',
+  image = '/images/hero.jpg'
+} = Astro.props
+---
+
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <link rel="icon" href="/favicon.png" />
+  </head>
+  <body class="text-gray-900 antialiased bg-white">
+    <slot />
+  </body>
+</html>
