@@ -4,28 +4,52 @@ import { LINKS, SITE } from '../data/site'
 
 <section
   id="inicio"
-  class="relative w-full h-[90vh] flex items-center justify-center md:justify-start text-white"
-  style="background-image: url('/images/ucm-bg.png'); background-size: cover; background-position: center;"
+  class="relative w-full h-[90vh] flex items-center justify-center md:justify-start text-white overflow-hidden"
+  style="background-image: url('/images/ucm-bg-day.png'); background-size: cover; background-position: center;"
 >
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/70 via-[#1a1a1a]/40 to-[#1a1a1a]/70">
+  <!-- Overlay con blur + degradado -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40 backdrop-blur-[2px]"
+  >
   </div>
 
   <!-- Contenido -->
   <div
     class="relative z-10 container-md flex flex-col items-center md:items-start text-center md:text-left max-w-3xl"
   >
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white drop-shadow-md">
+    <h1
+      class="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg opacity-0 translate-y-4 animate-fadeInUp"
+      style="color: #ffffff; letter-spacing: -0.5px;"
+    >
       Atención médica <br class="hidden md:block" /> donde y cuando la necesites
     </h1>
 
-    <p class="mt-4 text-lg md:text-xl text-gray-100 max-w-xl">
-      Afíliate con tu <strong>ejecutiva especializada</strong> y obtén atención médica a domicilio las
-      24 horas del día con <strong>{SITE.brand}</strong>.
+    <p
+      class="mt-4 text-lg md:text-xl max-w-xl opacity-0 translate-y-4 animate-fadeInUp [animation-delay:200ms]"
+      style="color: rgba(255,255,255,0.95); font-weight:600; line-height:1.6;"
+    >
+      Afíliate con tu <strong style="color:#fff;">ejecutiva especializada</strong> y obtén atención médica
+      a domicilio las 24 horas del día con <strong style="color:#fff;">{SITE.brand}</strong>.
     </p>
 
-    <div class="mt-8">
-      <a href={LINKS.wa()} class="btn-secondary text-lg"> Cotizar Ahora </a>
+    <div class="mt-8 opacity-0 translate-y-4 animate-fadeInUp [animation-delay:400ms]">
+      <a href={LINKS.wa()} class="btn-secondary text-lg px-8 py-3">Cotizar Ahora</a>
     </div>
   </div>
+
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.7s ease-out forwards;
+    }
+  </style>
 </section>

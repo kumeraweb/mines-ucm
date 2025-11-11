@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+body {
+  @apply bg-[#fdfdfd] text-gray-900;
+}
+
 /* utilidades pequeñas */
 .container-md {
   @apply max-w-6xl mx-auto px-4;
@@ -11,7 +15,10 @@
   @apply text-2xl md:text-3xl font-semibold text-[#2A3E63];
 }
 .subtitle {
-  @apply text-base md:text-lg text-gray-600;
+  @apply text-base md:text-lg text-gray-800;
+}
+p {
+  @apply text-gray-800;
 }
 
 /* BOTONES UCM */
