@@ -1,9 +1,9 @@
 export const SITE = {
-  name: 'María Inés • UCM',
+  name: 'Ejecutiva Planes • UCM',
   brand: 'Unidad Coronaria Móvil',
-  phone: '9XXXXYYYY',
+  phone: '976299880',
   whatsappMsg: 'Hola María Inés, quiero cotizar UCM',
-  email: 'contacto@ucm.cl',
+  email: ' mmora@ucmchile.cl',
   city: 'Santiago y V Región',
   ogImage: '/images/hero.jpg'
 }
