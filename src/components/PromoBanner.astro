@@ -1,35 +1,49 @@
 ---
-import { LINKS } from '../data/site'
+import { LINKS, SITE } from '../data/site'
 ---
 
 <section
   id="promo"
   class="relative w-full bg-gradient-to-r from-[#2A3E63] via-[#243b72] to-[#2A3E63] text-white overflow-hidden"
 >
-  <!-- Textura / detalle visual -->
   <div class="absolute inset-0 opacity-10 bg-[url('/images/pattern-light.svg')] bg-cover bg-center">
   </div>
 
   <div class="relative container-md py-16 flex flex-col items-center text-center">
-    <h2
-      class="text-3xl md:text-4xl font-bold tracking-tight drop-shadow-sm"
-      style="color: #ffffff;"
-    >
-      Siempre contigo…
-    </h2>
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight drop-shadow-sm">Siempre contigo…</h2>
 
-    <p class="mt-4 text-lg md:text-2xl font-medium leading-snug max-w-2xl" style="color: #ffffff;">
-      <span class="font-semibold" style="color: #ffffff;"> Cotiza Coronaria Móvil </span>
-      y dales tranquilidad a quienes más quieres.
+    <p class="mt-4 text-lg md:text-2xl font-medium leading-snug max-w-2xl">
+      <span class="font-semibold">Cotiza Coronaria Móvil</span>
+      y dale tranquilidad a quienes más quieres.
     </p>
 
     <div class="mt-8">
       <a
         href={LINKS.wa()}
-        class="btn-secondary bg-[#D62828] hover:bg-[#b81f1f] text-lg px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition"
+        data-cta="whatsapp"
+        aria-label="Hablar con tu ejecutiva por WhatsApp"
+        class="btn-secondary bg-[#D62828] hover:bg-[#b81f1f] text-lg px-8 py-3 rounded-lg shadow-lg animate-softPulse"
       >
         Habla con tu ejecutiva
       </a>
     </div>
   </div>
+
+  <!-- Animación sutil -->
+  <style>
+    @keyframes softPulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.035);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .animate-softPulse {
+      animation: softPulse 2.8s ease-in-out infinite;
+    }
+  </style>
 </section>

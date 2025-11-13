@@ -1,5 +1,5 @@
 ---
-import { LINKS } from '../data/site'
+import { LINKS, SITE } from '../data/site'
 ---
 
 <section id="nosotros" class="section bg-white">
@@ -21,24 +21,25 @@ import { LINKS } from '../data/site'
         ¡Hola! Permítame contarle lo más importante: en <strong>UCM</strong> tenemos
         <strong>más de 40 años de trayectoria</strong> y la confianza de más de
         <strong>600.000 familias</strong> que ya aseguraron su salud. Nosotros no solo ofrecemos un servicio;
-        entregamos
-        <strong>Servicios de Salud y Rescate Médico</strong> con la
-        <strong>más alta calidad</strong>. ¡Esto no es un lujo, es una
-        <strong>necesidad urgente!</strong>
+        entregamos <strong>Servicios de Salud y Rescate Médico</strong> con la
+        <strong>más alta calidad</strong>. ¡Esto no es un lujo, es una <strong
+          >necesidad urgente!</strong
+        >
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-4">
         Cuando la vida lo exige, somos <strong>rápidos y profesionales</strong>. Nuestro equipo está
-        preparado para responder ante sus
-        <strong>urgencias y emergencias vitales</strong>. No lo dude: somos el
+        preparado para responder ante sus <strong>urgencias y emergencias vitales</strong>. No lo
+        dude: somos el
         <strong>respaldo médico</strong> que usted y su familia necesitan.
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-4">
         <strong class="text-[#D62828]">¡Deje de postergarlo!</strong> El rescate de emergencias médicas
-        no puede esperar. Con UCM obtiene
-        <strong>tranquilidad garantizada y seguridad total</strong> en su vida. No está comprando un
-        plan: <strong>está invirtiendo en la paz mental de los suyos.</strong>
+        no puede esperar. Con UCM obtiene <strong>tranquilidad garantizada y seguridad total</strong
+        > en su vida. No está comprando un plan: <strong
+          >está invirtiendo en la paz mental de los suyos.</strong
+        >
       </p>
 
       <p class="text-gray-700 leading-relaxed mb-6">
@@ -47,8 +48,11 @@ import { LINKS } from '../data/site'
         <strong>Contrate su plan UCM</strong> y obtenga cobertura inmediata.
       </p>
 
+      <!-- CTA CORREGIDO: LLAMADA + TRACKING -->
       <a
-        href={LINKS.wa()}
+        href={LINKS.call()}
+        data-cta="llamar"
+        aria-label={`Llamar a la ejecutiva ${SITE.name}`}
         class="btn-secondary text-base px-8 py-3 font-semibold shadow-md hover:scale-105 transition"
       >
         Llamar a tu Asesor UCM

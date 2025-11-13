@@ -1,5 +1,5 @@
 ---
-import { LINKS } from '../data/site'
+import { LINKS, SITE } from '../data/site'
 ---
 
 <section id="contratar" class="section bg-[#f9fafb]">
@@ -23,35 +23,42 @@ import { LINKS } from '../data/site'
       <strong>¡La atención personalizada que usted necesita está a solo un clic!</strong>
     </p>
 
-    <!-- CTA principal -->
+    <!-- CTA PRINCIPAL -->
     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+      <!-- WhatsApp -->
       <a
         href={LINKS.wa()}
+        data-cta="whatsapp"
+        aria-label={`Contactar a ${SITE.name} por WhatsApp`}
         class="btn-primary text-base px-8 py-3 font-semibold shadow-md hover:scale-105 transition"
       >
         Contacta a tu ejecutiva
       </a>
+
+      <!-- Llamada -->
       <a
-        href="tel:+56976299880"
+        href={LINKS.call()}
+        data-cta="llamar"
+        aria-label={`Llamar a ${SITE.name}`}
         class="btn-ghost text-base px-8 py-3 font-semibold shadow-md hover:scale-105 transition"
       >
         Llamar ahora 📞
       </a>
     </div>
 
-    <!-- Identificación ejecutiva -->
+    <!-- IDENTIFICACIÓN EJECUTIVA -->
     <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 max-w-md mx-auto">
       <div class="flex flex-col items-center text-center">
-        <!-- <img
-          src="/images/maria-ines.jpg"
-          alt="Ejecutiva María Inés Mora"
-          class="w-20 h-20 rounded-full object-cover mb-3 shadow-sm"
-        /> -->
-        <!-- <h3 class="text-lg font-bold text-[#2A3E63]">MARÍA INÉS MORA C.</h3> -->
         <p class="text-gray-600 text-sm mb-1">Ejecutiva de Ventas UCM</p>
-        <a href="tel:+56976299880" class="text-[#D62828] font-semibold"> +56 9 7629 9880 </a>
-        <a href="mailto:mmora@ucmchile.cl" class="text-[#2A3E63] text-sm mt-1 hover:underline">
-          mmora@ucmchile.cl
+
+        <!-- Teléfono dinámico -->
+        <a href={LINKS.call()} data-cta="llamar" class="text-[#D62828] font-semibold">
+          +56 9 {SITE.phone}
+        </a>
+
+        <!-- Email dinámico -->
+        <a href={`mailto:${SITE.email}`} class="text-[#2A3E63] text-sm mt-1 hover:underline">
+          {SITE.email}
         </a>
 
         <p class="text-xs text-gray-500 mt-4 max-w-xs leading-snug">

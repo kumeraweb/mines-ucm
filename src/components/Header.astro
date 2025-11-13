@@ -1,5 +1,5 @@
 ---
-import { LINKS } from '../data/site'
+import { LINKS, SITE } from '../data/site'
 
 const menuItems = [
   { name: 'Inicio', href: '#inicio' },
@@ -11,15 +11,14 @@ const menuItems = [
 ---
 
 <header class="fixed top-0 left-0 w-full z-50">
-  <!-- BANNER SUPERIOR INFORMATIVO -->
+  <!-- BANNER SUPERIOR -->
   <div
     class="w-full bg-[#F6F8FB] text-[#2A3E63] text-center text-sm py-1.5 px-4 border-b border-gray-200 font-medium"
   >
-    Este sitio está destinado exclusivamente a la contratación de planes y consultas comerciales
-    UCM.
+    Este sitio está destinado exclusivamente a la contratación de planes UCM con la ejecutiva {}.
   </div>
 
-  <!-- NAV PRINCIPAL -->
+  <!-- NAV -->
   <div class="bg-white border-b border-gray-200">
     <div class="container-md flex items-center justify-between h-16">
       <!-- LOGO -->
@@ -36,12 +35,26 @@ const menuItems = [
             </a>
           ))
         }
-        <a href={LINKS.wa()} class="btn-primary">Contratar</a>
+        <a
+          href={LINKS.wa()}
+          data-cta="whatsapp"
+          aria-label={`Contactar por WhatsApp a ${SITE.name}`}
+          class="btn-primary"
+        >
+          Contratar con su Ejecutiva
+        </a>
       </nav>
 
       <!-- NAV MOBILE -->
       <div class="flex items-center gap-3 md:hidden">
-        <a href={LINKS.wa()} class="btn-primary text-sm px-3 py-2">Contratar</a>
+        <a
+          href={LINKS.wa()}
+          data-cta="whatsapp"
+          aria-label={`Contactar por WhatsApp a ${SITE.name}`}
+          class="btn-primary text-sm px-3 py-2"
+        >
+          Contratar
+        </a>
         <button id="menu-toggle" class="p-2 rounded-md border border-gray-300 hover:bg-gray-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -79,9 +92,11 @@ const menuItems = [
       }
       <a
         href={LINKS.wa()}
+        data-cta="whatsapp"
+        aria-label={`Contactar por WhatsApp a ${SITE.name}`}
         class="btn-primary px-6 py-2.5 text-base font-semibold shadow-md hover:scale-105 transition"
       >
-        Contratar
+        Contratar con {SITE.name}
       </a>
     </nav>
   </div>

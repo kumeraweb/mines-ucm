@@ -1,36 +1,136 @@
 ---
 import '../styles/global.css'
+import { SITE } from '../data/site'
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro'
+import PromoModal from '../components/PromoModal.astro'
+
+// Normalizamos canonical
+const canonical = SITE.domain.replace(/\/+$/, '')
+
+// Títulos y descripciones desde SITE o fallback
+const defaultTitle = SITE.title || `Contrata tu Plan UCM con ${SITE.name} | Atención 24/7`
+const defaultDescription = SITE.description ||
+  `Contrata tu plan UCM con ejecutiva oficial. Atención médica a domicilio 24/7 en ${SITE.city}. Cotiza hoy por WhatsApp.`
+
 const {
-  title = 'UCM – Atención médica en tu hogar',
-  description = 'Contrata tu plan UCM con María Inés. Atención 24/7 en Santiago y V Región.',
-  image = '/images/hero.jpg'
+  title = defaultTitle,
+  description = defaultDescription,
+  image = SITE.ogImage
 } = Astro.props
+
+const ogImageUrl = `${canonical}${image}`
 ---
 
+<!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content={`unidad coronaria móvil, planes UCM, atención médica a domicilio, rescate médico, 24/7, ejecutiva UCM ${SITE.name}, WhatsApp UCM, contratar plan UCM`}
+    />
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- OG -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <link rel="icon" href="/favicon.png" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_CL" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="icon" href="/favicon.png" />
+    <link rel="preload" href={image} as="image" />
+
+    <!-- Google Ads -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17545387254"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
 
-      gtag('config', 'AW-17545387254')
+      gtag("js", new Date());
+      gtag("config", "AW-17545387254");
+    </script>
+
+    <!-- TRACKING CTA (versión MASTER LAYOUT) -->
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("[data-cta]")?.forEach((el) => {
+          el.addEventListener("click", () => {
+            const id = el.getAttribute("data-cta");
+
+            // Evento general
+            gtag("event", "cta_click", { id });
+
+            // WhatsApp
+            if (id === "whatsapp") {
+              gtag("event", "conversion", {
+                send_to: "AW-17545387254/WndcCM6r-LkbEPa5pa5B",
+                value: 1.0,
+                currency: "CLP",
+              });
+            }
+
+            // Llamada
+            if (id === "llamar" || id === "call") {
+              gtag("event", "conversion", {
+                send_to: "AW-17545387254/VBFyCMav-LkbEPa5pa5B",
+                value: 1.0,
+                currency: "CLP",
+              });
+            }
+
+            // Formulario (opcional futuro)
+            if (id === "formulario") {
+              gtag("event", "conversion", {
+                send_to: "AW-17545387254/xxxxFORMxxxx",
+                value: 1.0,
+                currency: "CLP",
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- SCHEMA ORG -->
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        name: `Unidad Coronaria Móvil - Ejecutiva ${SITE.name}`,
+        url: canonical,
+        logo: `${canonical}/favicon.png`,
+        image: ogImageUrl,
+        description,
+        areaServed: ["Santiago", "Valparaíso"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: `+56${SITE.phone}`,
+          contactType: "sales",
+          availableLanguage: ["Spanish"],
+          email: SITE.email
+        }
+      })}
     </script>
   </head>
+
   <body class="text-gray-900 antialiased bg-white">
     <slot />
+    <FloatingWhatsApp />
+    <PromoModal />
   </body>
 </html>

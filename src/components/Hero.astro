@@ -4,39 +4,81 @@ import { LINKS, SITE } from '../data/site'
 
 <section
   id="inicio"
-  class="relative w-full h-[90vh] flex items-center justify-center md:justify-start text-white overflow-hidden"
+  class="relative pt-10 w-full h-[90vh] flex items-center justify-center md:justify-start text-white overflow-hidden"
   style="background-image: url('/images/ucm-bg-day.png'); background-size: cover; background-position: center;"
 >
-  <!-- Overlay con blur + degradado -->
+  <!-- Overlay -->
   <div
-    class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40 backdrop-blur-[2px]"
+    class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/60 backdrop-blur-[2px]"
   >
   </div>
 
-  <!-- Contenido -->
+  <!-- CONTENT -->
   <div
     class="relative z-10 container-md flex flex-col items-center md:items-start text-center md:text-left max-w-3xl"
   >
-    <h1
-      class="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg opacity-0 translate-y-4 animate-fadeInUp"
-      style="color: #ffffff; letter-spacing: -0.5px;"
+    <!-- BADGE EJECUTIVA -->
+    <div
+      class="mb-4 px-4 py-1 bg-white/15 backdrop-blur-md rounded-full text-sm font-semibold tracking-wide animate-fadeInUp"
+      style="animation-delay:50ms"
     >
-      Atención médica <br class="hidden md:block" /> donde y cuando la necesites
+      Ejecutiva UCM • {SITE.name}
+    </div>
+
+    <!-- TITULO -->
+    <h1
+      class="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] opacity-0 translate-y-4 animate-fadeInUp"
+      style="letter-spacing:-1px; animation-delay:150ms"
+    >
+      Atención médica a domicilio<br class="hidden md:block" />
+      rápida y 100% confiable
     </h1>
 
+    <!-- SUBTITULO -->
     <p
-      class="mt-4 text-lg md:text-xl max-w-xl opacity-0 translate-y-4 animate-fadeInUp [animation-delay:200ms]"
-      style="color: rgba(255,255,255,0.95); font-weight:600; line-height:1.6;"
+      class="mt-4 text-lg md:text-xl max-w-xl opacity-0 translate-y-4 animate-fadeInUp"
+      style="animation-delay:300ms; color:rgba(255,255,255,0.9); font-weight:500; line-height:1.6;"
     >
-      Afíliate con tu <strong style="color:#fff;">ejecutiva especializada</strong> y obtén atención médica
-      a domicilio las 24 horas del día con <strong style="color:#fff;">{SITE.brand}</strong>.
+      Afíliate con tu ejecutiva oficial UCM, y recibe atención médica en tu hogar
+      <strong>las 24 horas del día</strong>. Respuesta inmediata a tus consultas y cotizaciones.
     </p>
 
-    <div class="mt-8 opacity-0 translate-y-4 animate-fadeInUp [animation-delay:400ms]">
-      <a href={LINKS.wa()} class="btn-secondary text-lg px-8 py-3">Cotizar Ahora</a>
+    <!-- CTA BUTTONS -->
+    <div
+      class="w-full md:w-[50%] mt-8 flex flex-col sm:flex-row gap-4 opacity-0 translate-y-4 animate-fadeInUp"
+      style="animation-delay:450ms"
+    >
+      <!-- CTA WhatsApp -->
+      <a
+        href={LINKS.wa()}
+        data-cta="whatsapp"
+        aria-label={`Contactar por WhatsApp a ${SITE.name}`}
+        class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5A] text-white font-semibold px-8 py-3 text-lg rounded-xl shadow-xl shadow-black/20 transition-transform hover:scale-[1.03]"
+      >
+        Contacto directo
+      </a>
+
+      <!-- CTA Llamar -->
+      <a
+        href={LINKS.call()}
+        data-cta="llamar"
+        aria-label={`Llamar a ${SITE.name}`}
+        class="flex items-center justify-center gap-2 bg-white text-[#1A2A42] font-semibold px-8 py-3 text-lg rounded-xl shadow-xl shadow-black/20 hover:bg-gray-100 transition-transform hover:scale-[1.03]"
+      >
+        Llamar Ahora
+      </a>
     </div>
+
+    <!-- MICROCOPY -->
+    <p
+      class="text-sm mt-3 opacity-0 translate-y-4 animate-fadeInUp"
+      style="animation-delay:600ms; color:rgba(255,255,255,0.8)"
+    >
+      Ejecutiva con atención inmediata <strong>en linea</strong>
+    </p>
   </div>
 
+  <!-- ANIMACIONES -->
   <style>
     @keyframes fadeInUp {
       0% {

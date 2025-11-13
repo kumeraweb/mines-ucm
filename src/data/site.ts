@@ -1,13 +1,34 @@
 export const SITE = {
-  name: 'Ejecutiva Planes • UCM',
-  brand: 'Unidad Coronaria Móvil',
+  // Nombre de la ejecutiva
+  name: 'María Inés',
+
+  // Teléfono sin espacios ni signos (solo números)
   phone: '976299880',
-  whatsappMsg: 'Hola María Inés, quiero cotizar UCM',
-  email: ' mmora@ucmchile.cl',
+
+  // Mensaje predeterminado para WhatsApp
+  whatsappMsg: 'Hola Maria Inés, quiero cotizar un plan UCM',
+
+  // Email oficial UCM
+  email: 'mmora@ucmchile.cl',
+
+  // Ciudad o áreas atendidas
   city: 'Santiago y V Región',
-  ogImage: '/images/hero.jpg'
+
+  // Dominio real del sitio (sin slash al final)
+  domain: 'https://www.cotizacoronariamovil.cl',
+
+  // Imagen para OpenGraph
+  ogImage: '/images/hero.jpg',
+
+  // Título SEO opcional
+  title: 'Ejecutiva Planes • UCM',
+
+  // Descripción SEO opcional
+  description: 'Contratacion planes Unidad Coronaria Móvil'
 }
+
+// Helpers universales
 export const LINKS = {
-  wa: (num = SITE.phone) => `https://wa.me/56${num}?text=${encodeURIComponent(SITE.whatsappMsg)}`,
-  call: (num = SITE.phone) => `tel:+569${num}`
+  wa: () => `https://wa.me/56${SITE.phone}?text=${encodeURIComponent(SITE.whatsappMsg)}`,
+  call: () => `tel:+569${SITE.phone}`
 }

@@ -1,5 +1,5 @@
 ---
-import { LINKS } from '../data/site'
+import { LINKS, SITE } from '../data/site'
 ---
 
 <section id="servicios" class="section bg-[#f9fafb]">
@@ -10,7 +10,7 @@ import { LINKS } from '../data/site'
 
     <!-- GRID DE CARDS -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-      <!-- CARD -->
+      <!-- CARD 1 -->
       <div
         class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition"
       >
@@ -38,7 +38,7 @@ import { LINKS } from '../data/site'
         </p>
       </div>
 
-      <!-- CARD -->
+      <!-- CARD 2 -->
       <div
         class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition"
       >
@@ -65,7 +65,7 @@ import { LINKS } from '../data/site'
         </p>
       </div>
 
-      <!-- CARD -->
+      <!-- CARD 3 -->
       <div
         class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition"
       >
@@ -86,13 +86,13 @@ import { LINKS } from '../data/site'
           <h3 class="text-lg font-semibold text-[#2A3E63]">Profesionales Certificados</h3>
         </div>
         <p class="text-gray-700 leading-relaxed">
-          La calidad de <strong>UCM</strong> se resume en su equipo:
-          <strong>profesionales de la salud certificados, preparados y disponibles 24/7</strong> para
-          atenderle con excelencia.
+          La calidad de <strong>UCM</strong> se resume en su equipo: <strong
+            >profesionales de la salud certificados, preparados y disponibles 24/7</strong
+          > para atenderle con excelencia.
         </p>
       </div>
 
-      <!-- CARD -->
+      <!-- CARD 4 -->
       <div
         class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition"
       >
@@ -121,7 +121,7 @@ import { LINKS } from '../data/site'
         </p>
       </div>
 
-      <!-- CARD -->
+      <!-- CARD 5 -->
       <div
         class="bg-white rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition"
       >
@@ -148,13 +148,15 @@ import { LINKS } from '../data/site'
       </div>
     </div>
 
-    <!-- CTA FINAL -->
+    <!-- CTA FINAL (WHATSAPP) -->
     <div class="mt-10">
       <a
         href={LINKS.wa()}
+        data-cta="whatsapp"
+        aria-label="Contratar por WhatsApp"
         class="btn-primary text-base px-8 py-3 font-semibold shadow-md hover:scale-105 transition"
       >
-        Contrata aquí
+        Contratar por WhatsApp
       </a>
     </div>
   </div>
