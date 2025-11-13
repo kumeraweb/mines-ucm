@@ -12,12 +12,9 @@ const defaultTitle = SITE.title || `Contrata tu Plan UCM con ${SITE.name} | Aten
 const defaultDescription = SITE.description ||
   `Contrata tu plan UCM con ejecutiva oficial. Atención médica a domicilio 24/7 en ${SITE.city}. Cotiza hoy por WhatsApp.`
 
-const {
-  title = defaultTitle,
-  description = defaultDescription,
-  image = SITE.ogImage
-} = Astro.props
-
+const title = Astro.props.title ?? defaultTitle
+const description = Astro.props.description ?? defaultDescription
+const image = Astro.props.image ?? SITE.ogImage
 const ogImageUrl = `${canonical}${image}`
 ---
 

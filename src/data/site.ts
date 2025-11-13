@@ -30,5 +30,5 @@ export const SITE = {
 // Helpers universales
 export const LINKS = {
   wa: () => `https://wa.me/56${SITE.phone}?text=${encodeURIComponent(SITE.whatsappMsg)}`,
-  call: () => `tel:+569${SITE.phone}`
+  call: () => `tel:+56${SITE.phone}`
 }
