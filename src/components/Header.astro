@@ -11,11 +11,12 @@ const menuItems = [
 ---
 
 <header class="fixed top-0 left-0 w-full z-50">
-  <!-- BANNER SUPERIOR -->
+  <!-- BANNER SUPERIOR (seguro) -->
   <div
     class="w-full bg-[#F6F8FB] text-[#2A3E63] text-center text-sm py-1.5 px-4 border-b border-gray-200 font-medium"
   >
-    Este sitio está destinado exclusivamente a la contratación de planes UCM con la ejecutiva {}.
+    Este sitio está destinado exclusivamente a la gestión y contratación de planes UCM con la
+    ejecutiva {SITE.name}.
   </div>
 
   <!-- NAV -->
@@ -35,13 +36,14 @@ const menuItems = [
             </a>
           ))
         }
+
         <a
           href={LINKS.wa()}
           data-cta="whatsapp"
           aria-label={`Contactar por WhatsApp a ${SITE.name}`}
           class="btn-primary"
         >
-          Contratar con su Ejecutiva
+          Contactar Ejecutiva
         </a>
       </nav>
 
@@ -53,8 +55,9 @@ const menuItems = [
           aria-label={`Contactar por WhatsApp a ${SITE.name}`}
           class="btn-primary text-sm px-3 py-2"
         >
-          Contratar
+          Contactar
         </a>
+
         <button id="menu-toggle" class="p-2 rounded-md border border-gray-300 hover:bg-gray-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,13 +93,14 @@ const menuItems = [
           </a>
         ))
       }
+
       <a
         href={LINKS.wa()}
         data-cta="whatsapp"
         aria-label={`Contactar por WhatsApp a ${SITE.name}`}
         class="btn-primary px-6 py-2.5 text-base font-semibold shadow-md hover:scale-105 transition"
       >
-        Contratar con {SITE.name}
+        Contactar a {SITE.name}
       </a>
     </nav>
   </div>

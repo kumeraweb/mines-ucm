@@ -7,10 +7,11 @@ import PromoModal from '../components/PromoModal.astro'
 // Normalizamos canonical
 const canonical = SITE.domain.replace(/\/+$/, '')
 
-// Títulos y descripciones desde SITE o fallback
-const defaultTitle = SITE.title || `Contrata tu Plan UCM con ${SITE.name} | Atención 24/7`
-const defaultDescription = SITE.description ||
-  `Contrata tu plan UCM con ejecutiva oficial. Atención médica a domicilio 24/7 en ${SITE.city}. Cotiza hoy por WhatsApp.`
+// Títulos y descripciones sanitizadas
+const defaultTitle = SITE.title || `Contrata tu Plan UCM con ${SITE.name}`
+const defaultDescription =
+  SITE.description ||
+  `Afíliate a UCM con ejecutiva autorizada. Asesoría para contratar tu plan UCM en ${SITE.city}. Cotiza hoy por WhatsApp.`
 
 const title = Astro.props.title ?? defaultTitle
 const description = Astro.props.description ?? defaultDescription
@@ -29,7 +30,7 @@ const ogImageUrl = `${canonical}${image}`
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content={`unidad coronaria móvil, planes UCM, atención médica a domicilio, rescate médico, 24/7, ejecutiva UCM ${SITE.name}, WhatsApp UCM, contratar plan UCM`}
+      content={`planes UCM, contratar plan UCM, ejecutiva ${SITE.name}, afiliación UCM, asesoría UCM, cotizar plan UCM`}
     />
 
     <!-- CANONICAL -->
@@ -62,17 +63,15 @@ const ogImageUrl = `${canonical}${image}`
       gtag("config", "AW-17545387254");
     </script>
 
-    <!-- TRACKING CTA (versión MASTER LAYOUT) -->
+    <!-- TRACKING CTA (versión segura) -->
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("[data-cta]")?.forEach((el) => {
           el.addEventListener("click", () => {
             const id = el.getAttribute("data-cta");
 
-            // Evento general
             gtag("event", "cta_click", { id });
 
-            // WhatsApp
             if (id === "whatsapp") {
               gtag("event", "conversion", {
                 send_to: "AW-17545387254/86SmCLGg_8EbEPa5pa5B",
@@ -81,7 +80,6 @@ const ogImageUrl = `${canonical}${image}`
               });
             }
 
-            // Llamada
             if (id === "llamar" || id === "call") {
               gtag("event", "conversion", {
                 send_to: "AW-17545387254/pEcACNKg_8EbEPa5pa5B",
@@ -90,7 +88,6 @@ const ogImageUrl = `${canonical}${image}`
               });
             }
 
-            // Formulario (opcional futuro)
             if (id === "formulario") {
               gtag("event", "conversion", {
                 send_to: "AW-17545387254/xxxxFORMxxxx",
@@ -103,12 +100,12 @@ const ogImageUrl = `${canonical}${image}`
       });
     </script>
 
-    <!-- SCHEMA ORG -->
+    <!-- SCHEMA ORG SEGURO -->
     <script type="application/ld+json" is:inline>
       {JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        name: `Unidad Coronaria Móvil - Ejecutiva ${SITE.name}`,
+        "@type": "Organization",
+        name: `Ejecutiva UCM - ${SITE.name}`,
         url: canonical,
         logo: `${canonical}/favicon.png`,
         image: ogImageUrl,
@@ -117,7 +114,7 @@ const ogImageUrl = `${canonical}${image}`
         contactPoint: {
           "@type": "ContactPoint",
           telephone: `+56${SITE.phone}`,
-          contactType: "sales",
+          contactType: "customer support",
           availableLanguage: ["Spanish"],
           email: SITE.email
         }

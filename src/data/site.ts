@@ -6,7 +6,7 @@ export const SITE = {
   phone: '976299880',
 
   // Mensaje predeterminado para WhatsApp
-  whatsappMsg: 'Hola Maria Inés, quiero cotizar un plan UCM',
+  whatsappMsg: 'Hola María Inés, quisiera información sobre los planes UCM',
 
   // Email oficial UCM
   email: 'mmora@ucmchile.cl',
@@ -20,11 +20,12 @@ export const SITE = {
   // Imagen para OpenGraph
   ogImage: '/images/hero.jpg',
 
-  // Título SEO opcional
-  title: 'Ejecutiva Planes • UCM',
+  // Título SEO opcional (neutral y seguro)
+  title: 'Ejecutiva de Planes UCM | María Inés',
 
-  // Descripción SEO opcional
-  description: 'Contratacion planes Unidad Coronaria Móvil'
+  // Descripción SEO opcional (SIN términos médicos)
+  description:
+    'Asesoría comercial para afiliarte a los planes UCM. Información, orientación y contratación directa con ejecutiva autorizada.'
 }
 
 // Helpers universales

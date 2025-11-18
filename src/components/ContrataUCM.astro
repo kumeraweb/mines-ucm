@@ -4,66 +4,63 @@ import { LINKS, SITE } from '../data/site'
 
 <section id="contratar" class="section bg-[#f9fafb]">
   <div class="container-md text-center max-w-3xl">
-    <h2 class="text-3xl font-bold text-[#2A3E63] mb-4">Contratar Unidad Coronaria Móvil</h2>
+    <h2 class="text-3xl font-bold text-[#2A3E63] mb-4">Contrata tu Plan UCM</h2>
 
     <p class="text-gray-700 leading-relaxed mb-4">
-      Soy una <strong>Ejecutiva con vasta y probada experiencia</strong> en la
-      <strong>Unidad Coronaria Móvil (UCM)</strong>. No pierda tiempo buscando información general:
-      yo manejo los detalles, los beneficios y, lo más importante,
-      <strong>¡los valores y promociones vigentes!</strong>
+      Soy <strong>{SITE.name}</strong>, ejecutiva autorizada de UCM. Mi labor es ayudarte a conocer
+      los diferentes planes disponibles, resolver tus dudas y guiarte durante el proceso de
+      contratación de manera clara y directa.
     </p>
 
-    <p class="text-gray-700 leading-relaxed mb-4 font-semibold text-[#D62828]">
-      ¡Consulte por su cotización AHORA directamente conmigo!
+    <p class="text-gray-700 leading-relaxed mb-4">
+      Cada afiliado recibe orientación individual para comprender los beneficios y condiciones del
+      plan UCM que mejor se ajuste a sus necesidades.
     </p>
 
     <p class="text-gray-700 leading-relaxed mb-8">
-      Mi experiencia le garantiza que obtendrá <strong>el mejor plan al mejor precio</strong>,
-      adaptado a las necesidades de su familia en Santiago, Valparaíso o durante sus viajes.
-      <strong>¡La atención personalizada que usted necesita está a solo un clic!</strong>
+      Si deseas cotizar, comparar planes o solicitar más información, puedes contactarme por
+      WhatsApp o llamada directa.
     </p>
 
     <!-- CTA PRINCIPAL -->
     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-      <!-- WhatsApp -->
       <a
         href={LINKS.wa()}
         data-cta="whatsapp"
         aria-label={`Contactar a ${SITE.name} por WhatsApp`}
         class="btn-primary text-base px-8 py-3 font-semibold shadow-md hover:scale-105 transition"
       >
-        Contacta a tu ejecutiva
+        Contactar por WhatsApp
       </a>
 
-      <!-- Llamada -->
       <a
         href={LINKS.call()}
         data-cta="llamar"
         aria-label={`Llamar a ${SITE.name}`}
         class="btn-ghost text-base px-8 py-3 font-semibold shadow-md hover:scale-105 transition"
       >
-        Llamar ahora 📞
+        Llamar a la ejecutiva 📞
       </a>
     </div>
 
     <!-- IDENTIFICACIÓN EJECUTIVA -->
     <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 max-w-md mx-auto">
       <div class="flex flex-col items-center text-center">
-        <p class="text-gray-600 text-sm mb-1">Ejecutiva de Ventas UCM</p>
+        <p class="text-gray-600 text-sm mb-1">Ejecutiva autorizada UCM</p>
 
-        <!-- Teléfono dinámico -->
+        <!-- Teléfono -->
         <a href={LINKS.call()} data-cta="llamar" class="text-[#D62828] font-semibold">
           +56 {SITE.phone}
         </a>
 
-        <!-- Email dinámico -->
+        <!-- Email -->
         <a href={`mailto:${SITE.email}`} class="text-[#2A3E63] text-sm mt-1 hover:underline">
           {SITE.email}
         </a>
 
         <p class="text-xs text-gray-500 mt-4 max-w-xs leading-snug">
-          ⚠️ Este canal está destinado exclusivamente a la contratación de planes y consultas
-          comerciales.
+          Este canal está destinado exclusivamente a consultas comerciales y contratación de planes
+          UCM.
         </p>
       </div>
     </div>
