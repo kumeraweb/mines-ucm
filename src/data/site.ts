@@ -15,13 +15,13 @@ export const SITE = {
   city: 'Santiago y V Región',
 
   // Dominio real del sitio (sin slash al final)
-  domain: 'https://www.cotizacoronariamovil.cl',
+  domain: 'https://www.contratarucm.cl',
 
   // Imagen para OpenGraph
   ogImage: '/images/hero.jpg',
 
   // Título SEO opcional (neutral y seguro)
-  title: 'Ejecutiva de Planes UCM |',
+  title: 'Ejecutiva de Planes UCM',
 
   // Descripción SEO opcional (SIN términos médicos)
   description:
