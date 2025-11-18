@@ -1,6 +1,6 @@
 export const SITE = {
   // Nombre de la ejecutiva
-  name: 'María Inés',
+  name: 'Ejecutiva',
 
   // Teléfono sin espacios ni signos (solo números)
   phone: '976299880',
@@ -21,7 +21,7 @@ export const SITE = {
   ogImage: '/images/hero.jpg',
 
   // Título SEO opcional (neutral y seguro)
-  title: 'Ejecutiva de Planes UCM | María Inés',
+  title: 'Ejecutiva de Planes UCM |',
 
   // Descripción SEO opcional (SIN términos médicos)
   description:
