@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import { SITE, LINKS } from '../data/site'
+
+const meta = {
+  title: 'Planes UCM | Información y asesoría oficial',
+  description:
+    'Conoce los planes UCM y recibe asesoría directa con ejecutiva autorizada. Información clara, beneficios y orientación para tu afiliación.',
+  image: SITE.ogImage
+}
+---
+
+<BaseLayout {...meta}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-6 py-16 pt-46 space-y-12">
+    <h1 class="text-3xl font-bold text-[#1A2A42]">Planes UCM – Información y Asesoría Oficial</h1>
+
+    <p class="text-lg text-gray-700 leading-relaxed">
+      Los planes UCM entregan acceso a atención extrahospitalaria, asistencia en salud y servicios
+      complementarios para familias y hogares en {SITE.city}. Esta página ofrece una descripción
+      general para ayudarte a comprender cada opción antes de afiliarte.
+    </p>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-semibold text-[#1A2A42]">Tipos de planes UCM</h2>
+
+      <ul class="space-y-4 text-gray-700">
+        <li>
+          <strong>Plan Familiar:</strong> pensado para familias que necesitan apoyo en salud, orientación
+          telefónica y asistencia extrahospitalaria.
+        </li>
+        <li>
+          <strong>Plan Individual:</strong> ideal para personas que buscan protección personal con servicios
+          de salud a domicilio y orientación profesional.
+        </li>
+        <li>
+          <strong>Planes Complementarios:</strong> opciones que amplían tu cobertura con beneficios adicionales
+          y apoyo especializado.
+        </li>
+      </ul>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-semibold text-[#1A2A42]">
+        ¿Por qué afiliarse con una ejecutiva oficial?
+      </h2>
+
+      <p class="text-gray-700">
+        Una ejecutiva autorizada UCM te guía paso a paso en tu afiliación, resolviendo dudas,
+        explicando beneficios y permitiendo un proceso más rápido y acompañado.
+      </p>
+    </section>
+
+    <div class="mt-10 flex gap-4">
+      <a
+        href={LINKS.wa()}
+        class="bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold"
+        data-cta="whatsapp"
+      >
+        Cotizar por WhatsApp
+      </a>
+
+      <a
+        href={LINKS.call()}
+        class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold"
+        data-cta="llamar"
+      >
+        Llamar ahora
+      </a>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import { SITE } from '../data/site'
+
+const meta = {
+  title: 'Preguntas frecuentes UCM | Asesoría',
+  description:
+    'Preguntas frecuentes sobre afiliación, planes UCM, beneficios y atención domiciliaria. Asesoría directa con ejecutiva autorizada.',
+  image: SITE.ogImage
+}
+---
+
+<BaseLayout {...meta}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-6 pt-46 py-16 space-y-12">
+    <h1 class="text-3xl font-bold text-[#1A2A42]">Preguntas frecuentes</h1>
+
+    <div class="space-y-6 text-gray-700">
+      <div>
+        <h2 class="text-xl font-semibold">¿Cómo funciona la afiliación?</h2>
+        <p>Una ejecutiva autorizada te guía en el proceso y te ayuda a elegir el plan adecuado.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold">¿Los planes incluyen atención a domicilio?</h2>
+        <p>
+          Sí, los planes UCM incluyen servicios de atención y acompañamiento en el hogar según las
+          características del plan contratado.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold">¿Cuánto tarda la contratación?</h2>
+        <p>El proceso puede completarse en pocos minutos mediante WhatsApp o llamada.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-semibold">¿Puedo cambiar de plan más adelante?</h2>
+        <p>Sí, las ejecutivas autorizadas pueden orientarte para realizar un cambio de plan.</p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

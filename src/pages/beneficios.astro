@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import { SITE, LINKS } from '../data/site'
+
+const meta = {
+  title: 'Beneficios UCM | Ejecutiva Autorizada',
+  description:
+    'Descubre los beneficios de los planes UCM y recibe orientación con una ejecutiva autorizada. Información clara y directa.',
+  image: SITE.ogImage
+}
+---
+
+<BaseLayout {...meta}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-6 pt-46 py-16 space-y-12">
+    <h1 class="text-3xl font-bold text-[#1A2A42]">Beneficios de los Planes UCM</h1>
+
+    <p class="text-lg text-gray-700">
+      UCM ofrece servicios de asistencia extrahospitalaria, acompañamiento en salud y atención
+      domiciliaria para personas y familias. Aquí encontrarás una explicación clara y general de los
+      beneficios incluidos en los planes.
+    </p>
+
+    <ul class="space-y-4 text-gray-700">
+      <li>✔ Asistencia en salud a domicilio</li>
+      <li>✔ Acompañamiento para familias</li>
+      <li>✔ Orientación telefónica en salud</li>
+      <li>✔ Servicios complementarios y visitas domiciliarias</li>
+      <li>✔ Protección integral las 24 horas</li>
+    </ul>
+
+    <div class="mt-10 flex gap-4">
+      <a
+        href={LINKS.wa()}
+        class="bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold"
+        data-cta="whatsapp"
+      >
+        Más información
+      </a>
+
+      <a
+        href={LINKS.call()}
+        class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold"
+        data-cta="llamar"
+      >
+        Llamar ahora
+      </a>
+    </div>
+  </main>
+</BaseLayout>

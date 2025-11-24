@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import { SITE, LINKS } from '../data/site'
+
+const meta = {
+  title: 'Contacto | Ejecutiva Autorizada UCM',
+  description:
+    'Comunícate con ejecutiva autorizada UCM. Consulta, cotiza y afíliate a los planes UCM con atención inmediata.',
+  image: SITE.ogImage
+}
+---
+
+<BaseLayout {...meta}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-6 py-16 pt-46 space-y-8">
+    <h1 class="text-3xl font-bold text-[#1A2A42]">Contacto</h1>
+
+    <p class="text-lg text-gray-700">
+      Comunícate con tu ejecutiva autorizada UCM para resolver dudas, cotizar o afiliarte a un plan.
+      Atención rápida en {SITE.city}.
+    </p>
+
+    <div class="space-y-4">
+      <a
+        href={LINKS.wa()}
+        class="block bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold"
+        data-cta="whatsapp"
+      >
+        Contactar por WhatsApp
+      </a>
+
+      <a
+        href={LINKS.call()}
+        class="block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold"
+        data-cta="llamar"
+      >
+        Llamar ahora
+      </a>
+    </div>
+
+    <p class="mt-6 text-gray-600 text-sm">
+      Atención en {SITE.city} · Ejecutiva Autorizada UCM
+    </p>
+  </main>
+</BaseLayout>

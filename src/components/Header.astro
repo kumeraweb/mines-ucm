@@ -1,6 +1,7 @@
 ---
 import { LINKS, SITE } from '../data/site'
 
+// Rutas del menú
 const menuItems = [
   { name: 'Inicio', href: '#inicio' },
   { name: 'Nosotros', href: '#nosotros' },
@@ -8,22 +9,26 @@ const menuItems = [
   { name: 'Planes', href: '#planes' },
   { name: 'Cobertura', href: '#cobertura' }
 ]
+
+// Detectamos si estamos en la home
+const path = Astro.url.pathname
+const isHome = path === '/'
 ---
 
 <header class="fixed top-0 left-0 w-full z-50">
-  <!-- BANNER SUPERIOR (seguro) -->
+  <!-- BANNER SUPERIOR -->
   <div
     class="w-full bg-[#F6F8FB] text-[#2A3E63] text-center text-sm py-1.5 px-4 border-b border-gray-200 font-medium"
   >
     Este sitio está destinado exclusivamente a la gestión y contratación de planes UCM con la
-    ejecutiva oficial autorizada!.
+    ejecutiva oficial autorizada.
   </div>
 
   <!-- NAV -->
   <div class="bg-white border-b border-gray-200">
     <div class="container-md flex items-center justify-between h-24">
       <!-- LOGO -->
-      <a href="#inicio" class="flex items-center gap-2">
+      <a href={isHome ? '#inicio' : '/#inicio'} class="flex items-center gap-2">
         <img src="/logo/logo-ejecutiva.png" alt="UCM" class="h-18" />
       </a>
 
@@ -31,7 +36,10 @@ const menuItems = [
       <nav class="hidden md:flex items-center gap-8">
         {
           menuItems.map((item) => (
-            <a href={item.href} class="text-gray-700 hover:text-[#2A3E63] transition">
+            <a
+              href={isHome ? item.href : `/${item.href}`}
+              class="text-gray-700 hover:text-[#2A3E63] transition"
+            >
               {item.name}
             </a>
           ))
@@ -86,7 +94,7 @@ const menuItems = [
       {
         menuItems.map((item) => (
           <a
-            href={item.href}
+            href={isHome ? item.href : `/${item.href}`}
             class="text-gray-800 text-lg font-medium hover:text-[#2A3E63] transition"
           >
             {item.name}
@@ -100,12 +108,12 @@ const menuItems = [
         aria-label={`Contactar por WhatsApp a ${SITE.name}`}
         class="btn-primary px-6 py-2.5 text-base font-semibold shadow-md hover:scale-105 transition"
       >
-        Contactar a {SITE.name}
+        Contactar Ejecutiva
       </a>
     </nav>
   </div>
 
-  <script>
+  <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       const btn = document.getElementById('menu-toggle')
       const menu = document.getElementById('mobile-menu')
