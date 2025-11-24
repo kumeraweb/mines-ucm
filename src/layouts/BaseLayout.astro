@@ -53,8 +53,9 @@ const ogImageUrl = `${canonical}${image}`
     <link rel="icon" href="/faviconb.png" />
     <link rel="preload" href={image} as="image" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17744611312"></script>
+   <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17744611312">
+    </script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -74,7 +75,7 @@ const ogImageUrl = `${canonical}${image}`
 
             if (id === "whatsapp") {
               gtag("event", "conversion", {
-                send_to: "AW-17742112944/A7elCNefzMIbELDRjIxC",
+                send_to: "AW-17744611312/6rk7CJPDgMYbEPCPpY1C",
                 value: 1.0,
                 currency: "CLP",
               });
@@ -82,7 +83,7 @@ const ogImageUrl = `${canonical}${image}`
 
             if (id === "llamar" || id === "call") {
               gtag("event", "conversion", {
-                send_to: "AW-17742112944/gseqCNqfzMIbELDRjIxC",
+                send_to: "AW-17744611312/VoGtCJbDgMYbEPCPpY1C",
                 value: 1.0,
                 currency: "CLP",
               });
@@ -90,7 +91,7 @@ const ogImageUrl = `${canonical}${image}`
 
             if (id === "formulario") {
               gtag("event", "conversion", {
-                send_to: "AW-17545387254/xxxxFORMxxxx",
+                send_to: "AW-17744611312/xxxxFORMxxxx",
                 value: 1.0,
                 currency: "CLP",
               });
