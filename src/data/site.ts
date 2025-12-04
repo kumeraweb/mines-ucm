@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Ejecutiva',
-  phone: '976299880',
+  phone: '983589813',
   whatsappMsg: 'Hola María Inés, quisiera información sobre los planes UCM',
   email: 'mmora@ucmchile.cl',
   city: 'Santiago y V Región',
