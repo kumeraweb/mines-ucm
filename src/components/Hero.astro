@@ -5,47 +5,36 @@ import { LINKS, SITE } from '../data/site'
 <section
   id="inicio"
   class="relative pt-10 mt-28 w-full h-[90vh] flex items-center justify-center md:justify-start text-white overflow-hidden"
-  style="background-image: url('/images/ucm-bg-day.png'); background-size: cover; background-position: center;"
+  style="background-image: url('/images/ucm-bg-paramedic.jpeg'); background-size: cover; background-position: center;"
 >
-  <!-- Overlay -->
   <div
-    class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/60 backdrop-blur-[2px]"
+    class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60 backdrop-blur-[2px]"
   >
   </div>
-
-  <!-- CONTENT -->
   <div
     class="relative z-10 container-md flex flex-col items-center md:items-start text-center md:text-left max-w-3xl"
   >
-    <!-- BADGE EJECUTIVA -->
     <div
       class="mb-4 px-4 py-1 bg-white/15 backdrop-blur-md rounded-full text-sm font-semibold tracking-wide animate-fadeInUp"
       style="animation-delay:50ms"
     >
-      Ejecutiva UCM • Asesoría Oficial
+      Ejecutiva Oficial UCM • Atención rápida
     </div>
-
-    <!-- TITULO -->
     <h1
       class="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)] opacity-0 translate-y-4 animate-fadeInUp"
-      style="letter-spacing:-1px; animation-delay:150ms"
+      style="letter-spacing:-1px; animation-delay:50ms"
     >
-      Información y asesoría <br class="hidden md:block" /> para tu Plan UCM
+      Cotiza tu Plan UCM con Ejecutiva Oficial
     </h1>
-
-    <!-- SUBTITULO -->
     <p
       class="mt-4 text-lg md:text-xl max-w-xl opacity-0 translate-y-4 animate-fadeInUp"
-      style="animation-delay:300ms; color:rgba(255,255,255,0.9); font-weight:500; line-height:1.6;"
+      style="animation-delay:100ms; color:rgba(255,255,255,0.9); font-weight:500; line-height:1.6;"
     >
-      Afíliate con tu ejecutiva autorizada UCM y recibe orientación clara sobre beneficios,
-      cobertura y servicios extrahospitalarios incluidos en tu plan.
+      Respuesta inmediata por WhatsApp. Orientación rápida y clara sobre tu plan UCM.
     </p>
-
-    <!-- CTA BUTTONS -->
     <div
-      class="w-full md:w-[50%] mt-8 flex flex-col sm:flex-row gap-4 opacity-0 translate-y-4 animate-fadeInUp"
-      style="animation-delay:450ms"
+      class="w-full mt-8 flex flex-col sm:flex-row gap-4 opacity-0 translate-y-4 animate-fadeInUp"
+      style="animation-delay:150ms"
     >
       <a
         href={LINKS.wa()}
@@ -54,7 +43,7 @@ import { LINKS, SITE } from '../data/site'
         aria-label={`Contactar por WhatsApp a ${SITE.name}`}
         class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5A] text-white font-semibold px-8 py-3 text-lg rounded-xl shadow-xl shadow-black/20 transition-transform hover:scale-[1.03]"
       >
-        Cotizar ahora
+        Cotizar por WhatsApp
       </a>
 
       <a
@@ -63,20 +52,17 @@ import { LINKS, SITE } from '../data/site'
         aria-label={`Llamar a ${SITE.name}`}
         class="flex items-center justify-center gap-2 bg-white text-[#1A2A42] font-semibold px-8 py-3 text-lg rounded-xl shadow-xl shadow-black/20 hover:bg-gray-100 transition-transform hover:scale-[1.03]"
       >
-        Llamar
+        Llamar ahora
       </a>
     </div>
-
-    <!-- MICROCOPY -->
     <p
       class="text-sm mt-3 opacity-0 translate-y-4 animate-fadeInUp"
-      style="animation-delay:600ms; color:rgba(255,255,255,0.8)"
+      style="animation-delay:200ms; color:rgba(255,255,255,0.8)"
     >
-      Asesoría personalizada en {SITE.city} • Ejecutiva oficial UCM
+      Respuesta rápida • Atención en {SITE.city} • Ejecutiva oficial UCM
     </p>
   </div>
 
-  <!-- ANIMACIONES -->
   <style>
     @keyframes fadeInUp {
       0% {

@@ -45,8 +45,28 @@ import { LINKS, SITE } from '../data/site'
     }
   }
 
+  @keyframes wiggle {
+    0%,
+    93% {
+      transform: translate(0, 0) rotate(0);
+    }
+    95% {
+      transform: translate(2px, -2px) rotate(-2deg);
+    }
+    97% {
+      transform: translate(-2px, 2px) rotate(2deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0);
+    }
+  }
+
   .animate-softpulse {
     animation: softPulse 3.5s ease-in-out infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 6s ease-in-out infinite;
   }
 
   /* Modo móvil */
@@ -64,7 +84,9 @@ import { LINKS, SITE } from '../data/site'
   href={LINKS.wa()}
   data-cta="whatsapp"
   aria-label={`Hablar con la ejecutiva ${SITE.name} por WhatsApp`}
-  class="float-wa animate-softpulse"
+  class="float-wa animate-softpulse animate-wiggle"
+  target="_blank"
+  rel="noopener noreferrer"
 >
   <!-- Ícono en SVG embed para no depender de imágenes -->
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">

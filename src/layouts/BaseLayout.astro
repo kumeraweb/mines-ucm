@@ -2,12 +2,8 @@
 import '../styles/global.css'
 import { SITE } from '../data/site'
 import FloatingWhatsApp from '../components/FloatingWhatsApp.astro'
-import PromoModal from '../components/PromoModal.astro'
 
-// Normalizamos canonical
 const canonical = SITE.domain.replace(/\/+$/, '')
-
-// Títulos y descripciones sanitizadas
 const defaultTitle = SITE.title || `Contrata tu Plan UCM con ${SITE.name}`
 const defaultDescription =
   SITE.description ||
@@ -24,19 +20,14 @@ const ogImageUrl = `${canonical}${image}`
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta
       name="keywords"
       content={`planes UCM, contratar plan UCM, ejecutiva ${SITE.name}, afiliación UCM, asesoría UCM, cotizar plan UCM`}
     />
-
-    <!-- CANONICAL -->
     <link rel="canonical" href={canonical} />
 
-    <!-- OG -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -44,11 +35,6 @@ const ogImageUrl = `${canonical}${image}`
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="es_CL" />
 
-    <!-- TWITTER -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImageUrl} />
 
     <link rel="icon" href="/faviconb.png" />
     <link rel="preload" href={image} as="image" />
@@ -128,6 +114,5 @@ const ogImageUrl = `${canonical}${image}`
   <body class="text-gray-900 antialiased bg-white">
     <slot />
     <FloatingWhatsApp />
-    <!-- <PromoModal /> -->
   </body>
 </html>

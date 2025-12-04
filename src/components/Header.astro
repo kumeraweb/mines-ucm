@@ -1,7 +1,6 @@
 ---
 import { LINKS, SITE } from '../data/site'
 
-// Rutas del menú
 const menuItems = [
   { name: 'Inicio', href: '#inicio' },
   { name: 'Nosotros', href: '#nosotros' },
@@ -10,13 +9,11 @@ const menuItems = [
   { name: 'Cobertura', href: '#cobertura' }
 ]
 
-// Detectamos si estamos en la home
 const path = Astro.url.pathname
 const isHome = path === '/'
 ---
 
 <header class="fixed top-0 left-0 w-full z-50">
-  <!-- BANNER SUPERIOR -->
   <div
     class="w-full bg-[#F6F8FB] text-[#2A3E63] text-center text-sm py-1.5 px-4 border-b border-gray-200 font-medium"
   >
@@ -24,15 +21,12 @@ const isHome = path === '/'
     ejecutiva oficial autorizada.
   </div>
 
-  <!-- NAV -->
   <div class="bg-white border-b border-gray-200">
     <div class="container-md flex items-center justify-between h-24">
-      <!-- LOGO -->
       <a href={isHome ? '#inicio' : '/#inicio'} class="flex items-center gap-2">
-        <img src="/logo/logo-ejecutiva.png" alt="UCM" class="h-18" />
+        <img src="/logo/logo-ejecutiva.png" alt={SITE.name} class="h-18" />
       </a>
 
-      <!-- NAV DESKTOP -->
       <nav class="hidden md:flex items-center gap-8">
         {
           menuItems.map((item) => (
@@ -55,13 +49,12 @@ const isHome = path === '/'
         </a>
       </nav>
 
-      <!-- NAV MOBILE -->
       <div class="flex items-center gap-3 md:hidden">
         <a
           href={LINKS.wa()}
           data-cta="whatsapp"
           aria-label={`Contactar por WhatsApp a ${SITE.name}`}
-          class="btn-primary text-sm px-3 py-2"
+          class="btn-primary text-sm px-3 py-2 border-2 border-[#2A3E63]"
         >
           Contactar
         </a>
@@ -85,10 +78,9 @@ const isHome = path === '/'
     </div>
   </div>
 
-  <!-- MENU MOBILE -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden absolute top-[4.5rem] left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg animate-fadeIn"
+    class="hidden md:hidden absolute top-18 left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg animate-fadeIn"
   >
     <nav class="flex flex-col items-center py-6 space-y-4">
       {
